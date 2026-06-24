@@ -104,6 +104,26 @@ p{ text-wrap:pretty; }
 .btn-sol:hover{ background:var(--sol-2); }
 .btn-line{ --bg:transparent; --fg:var(--bone); border-color:var(--line); }
 .btn-line:hover{ border-color:var(--bone); background:color-mix(in oklch, var(--bone) 8%, transparent); }
+.btn .ic{ width:18px; height:18px; flex-shrink:0; }
+
+/* WhatsApp button */
+.btn-wa{
+  display:inline-flex; align-items:center; justify-content:center; gap:.55rem; text-decoration:none;
+  background:#25d366; color:#04331c; font-weight:600; font-size:.96rem;
+  padding:.8rem 1.45rem; border-radius:999px; border:1.5px solid transparent; margin-top:.4rem;
+  transition:transform .4s var(--e-expo), box-shadow .4s var(--e-expo), background .25s;
+}
+.btn-wa.btn-lg{ padding:1rem 1.85rem; font-size:1.02rem; }
+.btn-wa:hover{ transform:translateY(-3px); background:#28e070; box-shadow:var(--shadow); }
+.btn-wa:focus-visible{ outline:2px solid #25d366; outline-offset:3px; }
+.btn-wa .ic{ width:20px; height:20px; flex-shrink:0; fill:#04331c; }
+
+/* WhatsApp inline contact (footer) */
+.wa-link{ display:inline-flex; align-items:center; gap:.6rem; color:var(--sol); text-decoration:none; font-weight:600; font-size:1rem; transition:color .2s; }
+.wa-link:hover{ color:var(--bone); }
+.wa-ic{ display:grid; place-items:center; width:32px; height:32px; border-radius:50%; background:#25d366; flex-shrink:0; transition:transform .3s var(--e-expo); }
+.wa-link:hover .wa-ic{ transform:scale(1.08); }
+.wa-ic svg{ width:19px; height:19px; fill:#04331c; }
 
 /* ---------- NAV ---------- */
 .nav{
