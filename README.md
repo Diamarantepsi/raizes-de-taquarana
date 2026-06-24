@@ -47,7 +47,7 @@ Abra `index.html` em qualquer navegador, ou publique via **GitHub Pages** (Setti
 
 ## Contato
 
-Apadrinhamento e patrocínios: **+55 82 99692-5204**
+Apadrinhamento e patrocínios: **+55 82 9639-3585**
 
 ---
 
