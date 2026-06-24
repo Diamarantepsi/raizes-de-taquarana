@@ -1,16 +1,13 @@
-/* Raízes de Taquarana — interactions */
+/* Raízes de Taquarana — interactions (v2) */
 (function () {
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var supportsIO = "IntersectionObserver" in window;
 
-  /* ---- Nav: scrolled state + mobile toggle + active link ---- */
+  /* ---- Nav: scrolled state + mobile toggle ---- */
   var nav = document.getElementById("nav");
   var toggle = document.getElementById("navToggle");
-
-  function onScroll() {
-    if (window.scrollY > 24) nav.classList.add("scrolled");
-    else nav.classList.remove("scrolled");
-  }
+  function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 24); }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
@@ -27,76 +24,83 @@
     });
   }
 
-  /* ---- Reveal on scroll ---- */
-  var revealEls = document.querySelectorAll(".reveal");
-  if (reduce) {
-    revealEls.forEach(function (el) { el.classList.add("in"); });
+  /* ---- Reveal on scroll (enhancement; content visible without JS) ---- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  function showAll() { revealEls.forEach(function (el) { el.classList.add("in"); }); }
+
+  if (reduce || !supportsIO) {
+    showAll();
   } else {
     var ro = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e, i) {
-        if (e.isIntersecting) {
-          var sibs = Array.prototype.slice.call(
-            e.target.parentNode.querySelectorAll(":scope > .reveal")
-          );
-          var idx = sibs.indexOf(e.target);
-          e.target.style.transitionDelay = Math.min(idx, 6) * 70 + "ms";
-          e.target.classList.add("in");
-          ro.unobserve(e.target);
-        }
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var sibs = Array.prototype.slice.call(
+          e.target.parentNode.querySelectorAll(":scope > .reveal")
+        );
+        var idx = sibs.indexOf(e.target);
+        e.target.style.transitionDelay = Math.min(idx, 6) * 70 + "ms";
+        e.target.classList.add("in");
+        ro.unobserve(e.target);
       });
-    }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     revealEls.forEach(function (el) { ro.observe(el); });
+    /* safety net: never leave content hidden */
+    setTimeout(showAll, 4000);
   }
 
   /* ---- Animated number counters ---- */
-  function formatNum(v, dec) {
-    var s = dec > 0 ? v.toFixed(dec) : Math.round(v).toString();
-    return s.replace(".", ",");
+  function fmt(v, dec) {
+    return (dec > 0 ? v.toFixed(dec) : Math.round(v).toString()).replace(".", ",");
   }
   function runCount(el) {
     var to = parseFloat(el.getAttribute("data-to"));
     var dec = parseInt(el.getAttribute("data-dec") || "0", 10);
     var suffix = el.getAttribute("data-suffix") || "";
-    if (reduce) { el.textContent = formatNum(to, dec) + suffix; return; }
+    if (reduce) { el.textContent = fmt(to, dec) + suffix; return; }
     var dur = 1400, start = null;
     function step(ts) {
       if (!start) start = ts;
       var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = formatNum(to * eased, dec) + suffix;
+      el.textContent = fmt(to * (1 - Math.pow(1 - p, 3)), dec) + suffix;
       if (p < 1) requestAnimationFrame(step);
-      else el.textContent = formatNum(to, dec) + suffix;
+      else el.textContent = fmt(to, dec) + suffix;
     }
     requestAnimationFrame(step);
   }
-  var counters = document.querySelectorAll(".count");
-  var co = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(function (el) { co.observe(el); });
+  var counters = Array.prototype.slice.call(document.querySelectorAll(".count"));
+  if (!supportsIO) {
+    counters.forEach(runCount);
+  } else {
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { co.observe(el); });
+  }
 
-  /* ---- IDHM bars grow ---- */
-  var bars = document.querySelectorAll(".idhm-chart .bar");
-  var bo = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        bars.forEach(function (b, i) {
-          setTimeout(function () { b.classList.add("in"); }, i * 160);
+  /* ---- IDHM columns grow ---- */
+  var cols = Array.prototype.slice.call(document.querySelectorAll(".idhm-plot .col"));
+  if (cols.length) {
+    if (!supportsIO) {
+      cols.forEach(function (c) { c.classList.add("in"); });
+    } else {
+      var bo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          cols.forEach(function (c, i) { setTimeout(function () { c.classList.add("in"); }, i * 150); });
+          bo.disconnect();
         });
-        bo.disconnect();
-      }
-    });
-  }, { threshold: 0.4 });
-  if (bars.length) bo.observe(bars[0].parentNode);
+      }, { threshold: 0.4 });
+      bo.observe(cols[0].parentNode);
+    }
+  }
 
-  /* ---- Taquara grows on load ---- */
+  /* ---- Taquara draws on load ---- */
   var scene = document.querySelector(".taquara-scene");
   if (scene) {
-    if (reduce) scene.classList.add("go");
-    else requestAnimationFrame(function () {
-      setTimeout(function () { scene.classList.add("go"); }, 220);
+    requestAnimationFrame(function () {
+      setTimeout(function () { scene.classList.add("taquara-go"); }, 200);
     });
   }
 
@@ -105,15 +109,12 @@
   var sections = links
     .map(function (a) { return document.querySelector(a.getAttribute("href")); })
     .filter(Boolean);
-  if (sections.length) {
+  if (sections.length && supportsIO) {
     var so = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          var id = "#" + e.target.id;
-          links.forEach(function (a) {
-            a.classList.toggle("active", a.getAttribute("href") === id);
-          });
-        }
+        if (!e.isIntersecting) return;
+        var id = "#" + e.target.id;
+        links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === id); });
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
     sections.forEach(function (s) { so.observe(s); });
