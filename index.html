@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raízes de Taquarana — Jiu-Jitsu que forma crianças no Agreste de Alagoas</title>
+<meta name="description" content="Projeto social de apadrinhamento esportivo em Taquarana, Alagoas. Com R$10 por mês você sustenta a formação de uma criança pelo Jiu-Jitsu — esporte, escola, família e saúde. Dados reais, transparência total.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%232E5D43'/><path d='M50 18 V82 M50 30 q14 4 18 -6 M50 48 q-14 4 -18 -6 M50 64 q14 4 18 -6' stroke='%23D8A24A' stroke-width='5' fill='none' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#topo" class="brand" aria-label="Raízes de Taquarana — início">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 40" width="26" height="32">
+        <path d="M16 4 V30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M16 11 q7 2 9 -3 M16 20 q-7 2 -9 -3 M16 28 q7 2 9 -3" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M16 30 q-5 4 -9 8 M16 30 q5 4 9 8 M16 30 V39" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".65"/>
+      </svg>
+    </span>
+    <span class="brand-text">Raízes<span class="brand-sub">de Taquarana</span></span>
+  </a>
+  <nav class="nav-links" aria-label="Seções">
+    <a href="#manifesto">A taquara</a>
+    <a href="#dados">O território</a>
+    <a href="#como">Apadrinhamento</a>
+    <a href="#metodo">O método</a>
+    <a href="#cronograma">Cronograma</a>
+    <a href="#empresas">Empresas</a>
+  </nav>
+  <a href="#apoiar" class="btn btn-clay nav-cta">Apadrinhar · R$10</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="topo">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-contours" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">Taquarana · Agreste de Alagoas</p>
+      <h1 class="hero-title reveal">
+        Raízes que <em>seguram</em>.<br>
+        Crianças que <span class="ink-clay">se erguem</span>.
+      </h1>
+      <p class="hero-lead reveal">
+        Um projeto social que usa o <strong>Jiu-Jitsu</strong> para formar crianças e
+        adolescentes de Taquarana — disciplina, escola, família e saúde, sustentadas por
+        padrinhos e madrinhas que doam <strong>dez reais por mês</strong>.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#apoiar" class="btn btn-clay btn-lg">Quero apadrinhar uma criança</a>
+        <a href="#dados" class="btn btn-ghost btn-lg">Ver os dados de Taquarana</a>
+      </div>
+      <p class="hero-note reveal">
+        <span class="dot"></span> Baseado em dados oficiais do IBGE, do Governo de Alagoas e do PNUD
+      </p>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg class="taquara-scene" viewBox="0 0 360 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="stalk" x1="0" y1="60" x2="0" y2="340" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#4d8c64"/>
+            <stop offset="1" stop-color="#28553d"/>
+          </linearGradient>
+          <linearGradient id="stalkB" x1="0" y1="130" x2="0" y2="340" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#5c9a72"/>
+            <stop offset="1" stop-color="#326b4c"/>
+          </linearGradient>
+          <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#caa86f" stop-opacity="0"/>
+            <stop offset="1" stop-color="#a8743f" stop-opacity=".22"/>
+          </linearGradient>
+        </defs>
+
+        <!-- soil band -->
+        <rect x="0" y="338" width="360" height="182" fill="url(#soil)"/>
+        <line x1="22" y1="338" x2="338" y2="338" stroke="#9c6b3f" stroke-width="2" stroke-dasharray="3 8" opacity=".55"/>
+
+        <!-- ROOTS (draw downward) -->
+        <g class="roots" stroke="#a9763f" stroke-linecap="round" fill="none">
+          <path class="root" d="M182 338 C168 378 142 388 116 420 C98 442 94 466 90 492" stroke-width="3"/>
+          <path class="root" d="M182 338 C196 380 224 390 250 420 C270 440 274 466 278 492" stroke-width="3"/>
+          <path class="root" d="M182 338 C180 388 178 440 182 488" stroke-width="3"/>
+          <path class="root" d="M150 360 C128 374 116 398 96 404" stroke-width="2" opacity=".7"/>
+          <path class="root" d="M214 362 C238 376 250 400 270 406" stroke-width="2" opacity=".7"/>
+          <path class="root" d="M150 414 C134 426 126 446 110 456" stroke-width="1.8" opacity=".55"/>
+          <path class="root" d="M214 414 C232 426 242 446 258 456" stroke-width="1.8" opacity=".55"/>
+        </g>
+
+        <!-- STALKS (draw upward) -->
+        <path class="stalk stalk-2" d="M122 338 V172" stroke="url(#stalkB)" stroke-width="13" stroke-linecap="round"/>
+        <path class="stalk stalk-3" d="M242 338 V142" stroke="url(#stalkB)" stroke-width="15" stroke-linecap="round"/>
+        <path class="stalk stalk-1" d="M182 338 V70" stroke="url(#stalk)" stroke-width="22" stroke-linecap="round"/>
+
+        <!-- node rings -->
+        <g class="nodes" stroke="#1f3d2d" stroke-width="3" stroke-linecap="round" opacity=".5">
+          <line x1="170" y1="120" x2="194" y2="120"/>
+          <line x1="170" y1="172" x2="194" y2="172"/>
+          <line x1="170" y1="224" x2="194" y2="224"/>
+          <line x1="170" y1="276" x2="194" y2="276"/>
+          <line x1="113" y1="212" x2="131" y2="212"/>
+          <line x1="113" y1="262" x2="131" y2="262"/>
+          <line x1="232" y1="190" x2="252" y2="190"/>
+          <line x1="232" y1="242" x2="252" y2="242"/>
+        </g>
+
+        <!-- LEAVES -->
+        <g class="leaves">
+          <path class="leaf" d="M188 110 C214 90 244 92 268 72 C250 104 220 116 190 116 Z" fill="#4c8a63"/>
+          <path class="leaf" d="M176 120 C150 104 120 108 96 90 C116 122 148 132 178 128 Z" fill="#3f7a57"/>
+          <path class="leaf" d="M188 168 C214 150 242 152 266 134 C248 166 218 178 190 174 Z" fill="#5c9a72"/>
+          <path class="leaf" d="M176 222 C150 206 122 210 98 194 C120 224 150 232 178 228 Z" fill="#4c8a63"/>
+          <path class="leaf" d="M250 132 C272 116 296 118 316 102 C300 132 274 142 252 138 Z" fill="#5c9a72"/>
+          <path class="leaf" d="M122 162 C100 148 78 152 58 138 C78 164 100 172 124 168 Z" fill="#3f7a57"/>
+        </g>
+      </svg>
+      <div class="hero-badge">
+        <span class="hero-badge-k">19.032</span>
+        <span class="hero-badge-v">habitantes<br>Censo 2022</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE / VALORES ============ -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Disciplina</span><i>✦</i><span>Respeito</span><i>✦</i><span>Escola em dia</span><i>✦</i>
+    <span>Saúde</span><i>✦</i><span>Família</span><i>✦</i><span>Ceder para vencer</span><i>✦</i>
+    <span>Disciplina</span><i>✦</i><span>Respeito</span><i>✦</i><span>Escola em dia</span><i>✦</i>
+    <span>Saúde</span><i>✦</i><span>Família</span><i>✦</i><span>Ceder para vencer</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto" id="manifesto">
+  <div class="wrap manifesto-grid">
+    <div class="manifesto-side reveal">
+      <span class="kicker">A origem do nome</span>
+      <h2 class="h-display">A taquara<br>do Agreste</h2>
+    </div>
+    <div class="manifesto-body">
+      <p class="lead reveal">
+        Taquarana foi, até 1962, o povoado de <strong>Canabrava dos Pais</strong>, nascido da fazenda
+        instalada pela família Correia Pais em <strong>1750</strong>. O nome atual veio de uma planta:
+        a <strong>taquara</strong> — a cana-brava, nativa e abundante no Agreste alagoano.
+      </p>
+      <p class="reveal">
+        A taquara verga ao vento das secas <em>sem se quebrar</em>. E só resiste porque suas raízes
+        se entrelaçam no subsolo, sustentando umas às outras. É essa a aposta do projeto: formar
+        crianças firmes e flexíveis ao mesmo tempo, enraizadas na família, na escola e na comunidade.
+      </p>
+      <blockquote class="pull reveal">
+        “Vergar sem quebrar” é também o princípio do Jiu-Jitsu: a arte de <strong>ceder para vencer</strong>.
+      </blockquote>
+      <p class="reveal">
+        Cada padrinho e cada madrinha é uma dessas raízes. Sozinha, nenhuma segura a planta. Juntas,
+        elas erguem uma criança inteira.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DADOS REAIS ============ -->
+<section class="data" id="dados">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="kicker light">Por que Taquarana</span>
+      <h2 class="h-display invert">O território, em números reais</h2>
+      <p class="sec-sub">
+        Não partimos de impressões. Partimos de dados oficiais — e eles mostram um município onde o
+        esporte estruturado pode mudar trajetórias.
+      </p>
+    </header>
+
+    <div class="stat-grid">
+      <article class="stat reveal">
+        <div class="stat-num"><span class="count" data-to="0.541" data-dec="3">0,000</span></div>
+        <h3>IDHM em 2010</h3>
+        <p>Faixa <strong>baixa</strong> de desenvolvimento humano. Subiu de 0,279 (1991), mas ainda longe do ideal.</p>
+        <span class="src">PNUD · Atlas Brasil</span>
+      </article>
+
+      <article class="stat reveal">
+        <div class="stat-num"><span class="count" data-to="0.421" data-dec="3">0,000</span></div>
+        <h3>IDHM-Educação</h3>
+        <p>A dimensão <strong>mais frágil</strong> do desenvolvimento local — o elo que o projeto ataca de frente.</p>
+        <span class="src">PNUD · Atlas Brasil</span>
+      </article>
+
+      <article class="stat reveal feature">
+        <div class="stat-num"><span class="count" data-to="61" data-suffix="%">0%</span></div>
+        <h3>da população no Cadastro Único</h3>
+        <p>Cerca de <strong>11.592 pessoas</strong> em 3.547 famílias registradas como baixa renda. Seis em cada dez taquaranenses.</p>
+        <span class="src">Governo de Alagoas · MDS</span>
+      </article>
+
+      <article class="stat reveal">
+        <div class="stat-num"><span class="count" data-to="35.71" data-dec="2">0,00</span></div>
+        <h3>Mortalidade infantil</h3>
+        <p>Óbitos por mil nascidos vivos (2023) — quase <strong>3× a média nacional</strong>.</p>
+        <span class="src">IBGE · DATASUS</span>
+      </article>
+
+      <article class="stat reveal">
+        <div class="stat-num"><span class="count" data-to="61.5" data-dec="1" data-suffix="%">0%</span></div>
+        <h3>vive na zona rural</h3>
+        <p>Um município do campo. O projeto prioriza levar o esporte a quem está <strong>mais distante</strong> dele.</p>
+        <span class="src">IBGE · Censo 2010</span>
+      </article>
+
+      <article class="stat reveal">
+        <div class="stat-num"><span class="count" data-to="10" data-suffix="%">0%</span></div>
+        <h3>de abandono no ensino médio</h3>
+        <p>O ponto em que o adolescente vulnerável sai da escola. Aqui, treinar exige <strong>continuar estudando</strong>.</p>
+        <span class="src">INEP/MEC · Governo de Alagoas</span>
+      </article>
+    </div>
+
+    <!-- IDHM evolution mini chart -->
+    <div class="idhm reveal">
+      <div class="idhm-head">
+        <h3>A subida do IDHM de Taquarana</h3>
+        <p>Evolução real do Índice de Desenvolvimento Humano Municipal entre os censos. Há avanço — mas o patamar ainda é baixo.</p>
+      </div>
+      <div class="idhm-chart" role="img" aria-label="Gráfico: IDHM de Taquarana 0,279 em 1991, 0,375 em 2000 e 0,541 em 2010">
+        <div class="bar"><span class="bar-fill" style="--h:31%"></span><b>0,279</b><small>1991</small></div>
+        <div class="bar"><span class="bar-fill" style="--h:42%"></span><b>0,375</b><small>2000</small></div>
+        <div class="bar"><span class="bar-fill" style="--h:60%"></span><b>0,541</b><small>2010</small></div>
+        <div class="bar ghost"><span class="bar-fill" style="--h:89%"></span><b>0,800</b><small>meta de<br>desenv. alto</small></div>
+      </div>
+      <p class="src light">Fonte: PNUD/IPEA/FJP — Atlas do Desenvolvimento Humano no Brasil · Governo de Alagoas (Seplag)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="how" id="como">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="kicker">Como funciona</span>
+      <h2 class="h-display">Dez reais que sustentam<br>uma trajetória</h2>
+    </header>
+
+    <div class="how-flow">
+      <div class="flow-step reveal">
+        <span class="flow-n">01</span>
+        <h3>Você apadrinha</h3>
+        <p>Uma contribuição recorrente de <strong>R$10/mês</strong> no cartão. Pequena para você, decisiva em conjunto.</p>
+      </div>
+      <div class="flow-arrow reveal" aria-hidden="true">→</div>
+      <div class="flow-step reveal">
+        <span class="flow-n">02</span>
+        <h3>Vira um fundo</h3>
+        <p>Várias contribuições juntas sustentam <strong>um atleta inteiro</strong>. Como raízes que se entrelaçam.</p>
+      </div>
+      <div class="flow-arrow reveal" aria-hidden="true">→</div>
+      <div class="flow-step reveal">
+        <span class="flow-n">03</span>
+        <h3>Forma uma criança</h3>
+        <p>Treino, competição, alimentação e saúde — com escola em dia como condição.</p>
+      </div>
+    </div>
+
+    <div class="covers reveal">
+      <h3 class="covers-title">O que os R$10 custeiam, por atleta</h3>
+      <ul class="covers-list">
+        <li><span>Mensalidade dos treinos</span><em>mín. 3 sessões por semana</em></li>
+        <li><span>Competições</span><em>inscrições, ingressos e logística</em></li>
+        <li><span>Alimentação</span><em>vinculada ao plano nutricional</em></li>
+        <li><span>Preparação física</span><em>adequada à idade</em></li>
+        <li><span>Preparação nutricional</span><em>avaliação e plano periódicos</em></li>
+        <li><span>Quimono e equipamentos</span><em>conforme a necessidade</em></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÉTODO: 4 RAÍZES ============ -->
+<section class="method" id="metodo">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="kicker">O método</span>
+      <h2 class="h-display">Quatro raízes,<br>uma criança firme</h2>
+      <p class="sec-sub">O Jiu-Jitsu é o eixo. Mas ninguém cresce de pé com uma raiz só. O projeto se apoia em quatro.</p>
+    </header>
+
+    <div class="root-grid">
+      <article class="root-card reveal">
+        <span class="root-ic" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M13 20 l5 5 9-11" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>Jiu-Jitsu &amp; disciplina</h3>
+        <p>No mínimo três treinos por semana, com forte componente pedagógico — o parâmetro que a ciência associa à redução real da agressividade.</p>
+      </article>
+      <article class="root-card reveal">
+        <span class="root-ic" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M6 14 L20 8 L34 14 L20 20 Z" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linejoin="round"/><path d="M12 17 v8 c0 3 16 3 16 0 v-8" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+        </span>
+        <h3>Escola em dia</h3>
+        <p>Matrícula regular e notas acima da média são condição de permanência. O treino é o incentivo para não abandonar a escola.</p>
+      </article>
+      <article class="root-card reveal">
+        <span class="root-ic" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><circle cx="14" cy="15" r="5" stroke="currentColor" stroke-width="2.2" fill="none"/><circle cx="27" cy="17" r="4" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M6 32 c0-6 5-9 8-9 s8 3 8 9 M22 32 c0-5 3-7 5-7 s7 2 7 7" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+        </span>
+        <h3>Família &amp; respeito</h3>
+        <p>Relatórios familiares mensais. Formamos meninos e meninas que aprendem cedo o respeito e a não violência — prevenção que atravessa gerações.</p>
+      </article>
+      <article class="root-card reveal">
+        <span class="root-ic" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M20 33 C8 24 6 15 11 11 c3-3 7-1 9 2 c2-3 6-5 9-2 c5 4 3 13-9 22 Z" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>Saúde &amp; nutrição</h3>
+        <p>Parceria com a rede municipal: avaliação médica, exames e enfrentamento ativo do sobrepeso infantil, com nutricionista acompanhando cada atleta.</p>
+      </article>
+    </div>
+
+    <!-- O PACTO -->
+    <div class="pact reveal">
+      <div class="pact-head">
+        <span class="kicker">O pacto</span>
+        <h3>Não é assistencialismo. É um acordo de responsabilidade.</h3>
+        <p>Para permanecer no projeto, cada atleta e sua família assumem compromissos verificados de perto.</p>
+      </div>
+      <div class="pact-table">
+        <div class="pact-row pact-row-head"><span>Dimensão</span><span>Compromisso</span><span>Quando</span></div>
+        <div class="pact-row"><span>Escola</span><span>Matrícula regular, notas acima da média e frequência</span><span>Semestral</span></div>
+        <div class="pact-row"><span>Família</span><span>Comportamento exemplar e respeito em casa</span><span>Mensal</span></div>
+        <div class="pact-row"><span>Treinos</span><span>Assiduidade, disciplina e respeito a todos</span><span>Contínua</span></div>
+        <div class="pact-row"><span>Saúde</span><span>Comparecer às avaliações médicas e nutricionais</span><span>Por protocolo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRONOGRAMA ============ -->
+<section class="timeline" id="cronograma">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="kicker light">Cronograma</span>
+      <h2 class="h-display invert">Doze meses para criar raiz</h2>
+      <p class="sec-sub">A primeira turma, passo a passo. Avaliação em todos os trimestres — não só no fim.</p>
+    </header>
+
+    <div class="tl-track">
+      <article class="tl-item reveal">
+        <span class="tl-q">Trimestre 1 · M1–M3</span>
+        <h3>Fundação</h3>
+        <ul>
+          <li>Registro do projeto e conta exclusiva</li>
+          <li>Articulação com escolas, CRAS e Saúde</li>
+          <li>Seleção dos atletas e termos de compromisso</li>
+          <li><strong>Avaliação inicial</strong> (linha de base)</li>
+          <li>Início dos treinos</li>
+        </ul>
+      </article>
+      <article class="tl-item reveal">
+        <span class="tl-q">Trimestre 2 · M4–M6</span>
+        <h3>Enraizamento</h3>
+        <ul>
+          <li>Rotina de treinos consolidada</li>
+          <li>Acompanhamento nutricional e físico</li>
+          <li>Primeiras competições oficiais</li>
+          <li><strong>Avaliação de processo</strong> + relatório escolar</li>
+          <li>Demonstrativo semestral aos apoiadores</li>
+        </ul>
+      </article>
+      <article class="tl-item reveal">
+        <span class="tl-q">Trimestre 3 · M7–M9</span>
+        <h3>Crescimento</h3>
+        <ul>
+          <li>Ampliação da base de padrinhos</li>
+          <li>Captação de patrocínios empresariais</li>
+          <li>Calendário de competições</li>
+          <li>Acompanhamento contínuo de saúde</li>
+        </ul>
+      </article>
+      <article class="tl-item reveal">
+        <span class="tl-q">Trimestre 4 · M10–M12</span>
+        <h3>Colheita</h3>
+        <ul>
+          <li><strong>Avaliação de resultados</strong> vs. linha de base</li>
+          <li>Relatório anual de resultados</li>
+          <li>2º demonstrativo financeiro</li>
+          <li>Planejamento da expansão</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- 3 fases -->
+    <div class="phases reveal">
+      <div class="phase"><span>Fase 1</span><h4>Piloto</h4><p>Primeira turma e consolidação dos fluxos com escola e saúde.</p></div>
+      <div class="phase"><span>Fase 2</span><h4>Expansão</h4><p>Mais vagas, patrocínios diretos e inclusão da zona rural.</p></div>
+      <div class="phase"><span>Fase 3</span><h4>Sustentabilidade</h4><p>OSC formalizada e acesso à Lei de Incentivo ao Esporte e editais.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVALIAÇÃO ============ -->
+<section class="evalsec" id="avaliacao">
+  <div class="wrap eval-grid">
+    <div class="eval-side reveal">
+      <span class="kicker">Avaliação contínua</span>
+      <h2 class="h-display">Medimos<br>o caminho<br>inteiro</h2>
+      <p>Quatro níveis de avaliação acompanham cada criança da entrada à colheita — com instrumentos e periodicidade definidos.</p>
+    </div>
+    <div class="eval-levels">
+      <div class="eval-lv reveal"><span class="lv-n">01</span><div><h4>Diagnóstico</h4><p>Linha de base na entrada: saúde, IMC, rendimento e frequência escolar.</p></div></div>
+      <div class="eval-lv reveal"><span class="lv-n">02</span><div><h4>Processo</h4><p>Assiduidade nos treinos, cumprimento dos compromissos, relatórios mensais.</p></div></div>
+      <div class="eval-lv reveal"><span class="lv-n">03</span><div><h4>Resultado</h4><p>Evolução escolar, de saúde e esportiva frente à linha de base, a cada semestre.</p></div></div>
+      <div class="eval-lv reveal"><span class="lv-n">04</span><div><h4>Impacto</h4><p>Permanência, vínculo escolar mantido e mudanças sustentadas, ano a ano.</p></div></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="ind reveal">
+      <h3>Indicadores &amp; metas</h3>
+      <div class="ind-grid">
+        <div class="ind-item"><b>≥ 95%</b><span>frequência escolar</span></div>
+        <div class="ind-item"><b>≥ 85%</b><span>assiduidade nos treinos</span></div>
+        <div class="ind-item"><b>≥ 80%</b><span>permanência no programa/ano</span></div>
+        <div class="ind-item"><b>2+</b><span>competições por atleta/ano</span></div>
+        <div class="ind-item"><b>↑</b><span>IMC na faixa saudável</span></div>
+        <div class="ind-item"><b>100%</b><span>exames de saúde em dia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMPRESAS ============ -->
+<section class="biz" id="empresas">
+  <div class="wrap biz-grid">
+    <div class="biz-copy reveal">
+      <span class="kicker light">Para empresas</span>
+      <h2 class="h-display invert">Sua marca enraizada<br>numa causa real</h2>
+      <p>Empresas podem custear atletas, patrocinar competições ou apoiar de forma institucional — com contrapartidas de visibilidade que respeitam o ECA e a LGPD.</p>
+      <p class="biz-law">
+        <strong>Lei de Incentivo ao Esporte.</strong> Tornada permanente pela Lei Complementar nº 222/2025,
+        permite deduzir do Imposto de Renda os valores aplicados. Para projetos de inclusão social
+        como este, a dedução pode alcançar <strong>4%</strong> do imposto devido.
+      </p>
+    </div>
+    <div class="biz-cards">
+      <div class="biz-card reveal"><h4>Empresa Madrinha</h4><p>Custeio integral de um ou mais atletas por 12 meses. Logomarca no quimono, no material e na página do projeto.</p></div>
+      <div class="biz-card reveal"><h4>Patrocinadora de Competições</h4><p>Inscrições, ingressos e logística de uma temporada. Marca nos uniformes de competição.</p></div>
+      <div class="biz-card reveal"><h4>Apoiadora Institucional</h4><p>Contribuição mensal recorrente. Selo digital de apoiadora e menção no relatório anual.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRANSPARÊNCIA ============ -->
+<section class="transp">
+  <div class="wrap transp-inner reveal">
+    <span class="kicker">Transparência</span>
+    <h2 class="h-display">Você sabe para onde vai cada real</h2>
+    <div class="transp-list">
+      <div><b>Conta exclusiva</b><span>segregada das finanças da academia</span></div>
+      <div><b>Recibo a cada doação</b><span>por plataforma de pagamento recorrente</span></div>
+      <div><b>Demonstrativo semestral</b><span>de receitas e despesas, a todos os apoiadores</span></div>
+      <div><b>Relatório anual</b><span>de resultados, indicadores e evolução dos atletas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta" id="apoiar">
+  <div class="cta-roots" aria-hidden="true">
+    <svg viewBox="0 0 1200 220" preserveAspectRatio="none">
+      <g stroke="#d8a24a" stroke-width="2" fill="none" opacity=".5" stroke-linecap="round">
+        <path d="M600 0 C560 60 460 70 380 120 C320 156 300 190 290 220"/>
+        <path d="M600 0 C640 60 740 70 820 120 C880 156 900 190 910 220"/>
+        <path d="M600 0 C596 70 590 150 600 220"/>
+        <path d="M600 0 C540 50 470 60 420 110 M600 0 C660 50 730 60 780 110"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap cta-inner reveal">
+    <h2>Seja uma raiz.</h2>
+    <p>Dez reais por mês. Uma criança de Taquarana firme na escola, no tatame e na vida.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5582996925204?text=Quero%20apadrinhar%20uma%20crian%C3%A7a%20no%20Projeto%20Ra%C3%ADzes%20de%20Taquarana" class="btn btn-clay btn-lg" target="_blank" rel="noopener">Apadrinhar agora · R$10/mês</a>
+      <a href="documento/Projeto-Raizes-de-Taquarana.pdf" class="btn btn-ghost-light btn-lg" target="_blank" rel="noopener">Ler o projeto completo (PDF)</a>
+    </div>
+    <p class="cta-mini">Empresa? Fale sobre cotas de patrocínio e Lei de Incentivo ao Esporte pelo mesmo contato.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <span class="brand-text big">Raízes<span class="brand-sub">de Taquarana</span></span>
+      <p>Projeto social de apadrinhamento esportivo. LACUS Brazilian Jiu-Jitsu — Núcleo Taquarana, Agreste de Alagoas.</p>
+      <p class="foot-contact">Contato &amp; apadrinhamento: <a href="https://wa.me/5582996925204" target="_blank" rel="noopener">+55 82 99692-5204</a></p>
+    </div>
+    <div class="foot-col">
+      <h5>Navegar</h5>
+      <a href="#manifesto">A taquara</a>
+      <a href="#dados">O território</a>
+      <a href="#como">Apadrinhamento</a>
+      <a href="#cronograma">Cronograma</a>
+      <a href="documento/Projeto-Raizes-de-Taquarana.pdf" target="_blank" rel="noopener">Documento (PDF)</a>
+    </div>
+    <div class="foot-col foot-src">
+      <h5>Fontes dos dados</h5>
+      <p>IBGE — Censo Demográfico 2022 e Cidades e Estados</p>
+      <p>Governo de Alagoas — Seplag, Perfil Municipal de Taquarana</p>
+      <p>PNUD / IPEA / FJP — Atlas do Desenvolvimento Humano</p>
+      <p>IPEA &amp; FBSP — Atlas da Violência 2026 · INEP/MEC · DATASUS</p>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span>© 2026 Projeto Raízes de Taquarana</span>
+    <span>“A taquara verga, mas não quebra.”</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

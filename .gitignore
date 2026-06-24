@@ -1,0 +1,12 @@
+# Arquivos de pesquisa (fontes brutas, não publicar)
+pesquisa/
+adote_*.txt
+*.tmp
+
+# Ferramentas locais de preview
+.claude/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

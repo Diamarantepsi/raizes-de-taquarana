@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto Raízes de Taquarana — Documento Completo</title>
+<style>
+  /* ===== ABNT-oriented print document ===== */
+  @page {
+    size: A4;
+    margin: 3cm 2cm 2cm 3cm; /* sup/dir/inf/esq */
+  }
+  :root{
+    --ink:#1b2620;
+    --green:#2f5d45;
+    --clay:#b05a36;
+    --muted:#5a6660;
+    --line:#d8d2c4;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:"Times New Roman", Georgia, serif;
+    font-size:12pt;
+    line-height:1.5;
+    color:var(--ink);
+    background:#fff;
+    text-align:justify;
+    hyphens:auto;
+  }
+  .page{ page-break-after:always; }
+  .page:last-child{ page-break-after:auto; }
+  p{ margin:0 0 .35cm 0; text-indent:1.25cm; }
+  p.noindent{ text-indent:0; }
+  h1,h2,h3{ font-weight:bold; text-align:left; line-height:1.3; }
+  h1.sec{ font-size:12pt; text-transform:uppercase; margin:0 0 .4cm 0; }
+  h2.sub{ font-size:12pt; margin:.5cm 0 .25cm 0; }
+  h3.subsub{ font-size:12pt; font-weight:bold; margin:.4cm 0 .2cm 0; }
+  ol.alpha{ margin:.1cm 0 .35cm 0; padding-left:1.9cm; }
+  ol.alpha li{ margin-bottom:.18cm; text-align:justify; }
+  .center{ text-align:center; text-indent:0; }
+  .small{ font-size:10pt; }
+  .muted{ color:var(--muted); }
+
+  /* Cover */
+  .cover{ display:flex; flex-direction:column; min-height:24cm; text-align:center; }
+  .cover .top{ text-transform:uppercase; font-weight:bold; letter-spacing:.5px; }
+  .cover .title{ margin-top:7cm; }
+  .cover .title .name{ font-size:20pt; font-weight:bold; color:var(--green); letter-spacing:1px; }
+  .cover .title .rule{ width:3.4cm; height:3px; background:var(--clay); margin:.45cm auto; border:0; }
+  .cover .title .sub{ font-size:13pt; font-weight:bold; text-transform:uppercase; line-height:1.5; }
+  .cover .bottom{ margin-top:auto; text-transform:uppercase; font-weight:bold; }
+
+  /* Title page presentation block */
+  .present{ width:8.5cm; margin-left:auto; font-size:11pt; text-align:justify; line-height:1.4; }
+
+  /* Tables (Quadros) */
+  table.q{ width:100%; border-collapse:collapse; font-size:10.5pt; margin:.15cm 0 .25cm 0; text-align:left; }
+  table.q caption{ text-align:left; font-size:10.5pt; font-weight:bold; margin-bottom:.12cm; caption-side:top; }
+  table.q th, table.q td{ border:.5px solid var(--ink); padding:4px 6px; vertical-align:top; text-indent:0; }
+  table.q th{ background:#eef0ea; font-weight:bold; }
+  .fonte{ font-size:9.5pt; color:var(--muted); margin:.05cm 0 .5cm 0; text-indent:0; text-align:left; }
+
+  /* Stat strip in justificativa */
+  .data-line{ text-indent:0; }
+  .ref{ font-size:11pt; text-indent:0; text-align:left; margin-bottom:.28cm; line-height:1.4; padding-left:1.1cm; }
+  .ref-hang{ text-indent:-1.1cm; }
+  .sumario p{ text-indent:0; margin:0 0 .12cm 0; }
+  a{ color:var(--ink); text-decoration:none; }
+  .resumo-box{ }
+  .kw{ text-indent:0; margin-top:.5cm; }
+</style>
+</head>
+<body>
+
+<!-- ============ CAPA ============ -->
+<section class="page cover">
+  <div class="top">
+    LACUS Brazilian Jiu-Jitsu — Núcleo Taquarana<br>
+    Núcleo de Projetos Sociais
+  </div>
+  <div class="title">
+    <div class="name">PROJETO RAÍZES DE TAQUARANA</div>
+    <hr class="rule">
+    <div class="sub">
+      O Jiu-Jitsu como instrumento de desenvolvimento integral de crianças e adolescentes de Taquarana, Alagoas
+    </div>
+  </div>
+  <div class="bottom">
+    Taquarana<br>2026
+  </div>
+</section>
+
+<!-- ============ FOLHA DE ROSTO ============ -->
+<section class="page cover">
+  <div class="top">LACUS Brazilian Jiu-Jitsu — Núcleo Taquarana</div>
+  <div style="margin-top:5.5cm;">
+    <div class="name" style="font-size:18pt; font-weight:bold; color:var(--green);">PROJETO RAÍZES DE TAQUARANA</div>
+    <hr class="rule" style="width:3cm;height:3px;background:var(--clay);border:0;margin:.4cm auto;">
+  </div>
+  <p class="present" style="margin-top:4cm;">
+    Projeto social de apadrinhamento esportivo apresentado a pessoas físicas e jurídicas
+    interessadas em financiar a formação esportiva, educacional e cidadã de crianças e
+    adolescentes em situação de vulnerabilidade social no município de Taquarana, no Agreste
+    de Alagoas.
+  </p>
+  <p class="present" style="margin-top:.8cm;">Versão 1.0, junho de 2026.<br>Contato: +55 82 99692-5204</p>
+  <div class="bottom" style="margin-top:auto;">Taquarana<br>2026</div>
+</section>
+
+<!-- ============ RESUMO ============ -->
+<section class="page">
+  <h1 class="sec center" style="text-align:center; margin-bottom:.6cm;">RESUMO</h1>
+  <p>
+    O Projeto Raízes de Taquarana é uma iniciativa social da academia LACUS Brazilian Jiu-Jitsu,
+    em sua atuação no município de Taquarana, no Agreste de Alagoas, que conecta apoiadores a
+    crianças e adolescentes em situação de vulnerabilidade social por meio de contribuição
+    recorrente de dez reais mensais no cartão de crédito. Os recursos arrecadados custeiam a
+    mensalidade dos treinos de Jiu-Jitsu, as inscrições e os ingressos em competições, a
+    alimentação e a preparação física e nutricional de cada atleta apadrinhado. Como
+    contrapartida, o atleta deve manter matrícula escolar regular, rendimento acima da média e
+    comportamento exemplar em casa, na escola e nos treinos, requisitos verificados por
+    relatórios escolares semestrais e relatórios familiares mensais. O acompanhamento de saúde é
+    assegurado por parceria com a Secretaria Municipal de Saúde de Taquarana e sua rede de
+    Unidades Básicas de Saúde, com a realização de consultas e exames laboratoriais e
+    bioquímicos periódicos. O projeto fundamenta-se em dados oficiais do território — produzidos
+    pelo Instituto Brasileiro de Geografia e Estatística, pela Secretaria de Estado do
+    Planejamento, Gestão e Patrimônio de Alagoas e pelo Programa das Nações Unidas para o
+    Desenvolvimento — e em evidências científicas consolidadas sobre os efeitos das artes
+    marciais na redução da agressividade e no desenvolvimento de competências socioemocionais.
+    Inspira-se, ainda, na própria identidade de Taquarana: a taquara, planta nativa e resistente
+    do Agreste que dá nome à cidade, só sobrevive aos ventos porque suas raízes se entrelaçam no
+    subsolo e se sustentam umas às outras — imagem que traduz a aposta do projeto na formação de
+    crianças firmes, flexíveis e enraizadas em sua família e comunidade. O documento prevê
+    cronograma de execução, indicadores e plano de monitoramento e avaliação, modalidades de
+    financiamento por pessoa jurídica com enquadramento na Lei de Incentivo ao Esporte e
+    mecanismos formais de registro, prestação de contas e transparência na aplicação integral
+    dos recursos recebidos.
+  </p>
+  <p class="kw"><strong>Palavras-chave:</strong> jiu-jitsu; projeto social; vulnerabilidade social;
+  desenvolvimento infantojuvenil; apadrinhamento esportivo; Taquarana; Agreste alagoano.</p>
+</section>
+
+<!-- ============ SUMÁRIO ============ -->
+<section class="page sumario">
+  <h1 class="sec center" style="text-align:center; margin-bottom:.6cm;">SUMÁRIO</h1>
+  <p>1 INTRODUÇÃO</p>
+  <p>2 JUSTIFICATIVA</p>
+  <p style="padding-left:.8cm;">2.1 Contexto territorial: Taquarana, o Agreste e Alagoas</p>
+  <p style="padding-left:.8cm;">2.2 Vulnerabilidade social, pobreza e desenvolvimento humano</p>
+  <p style="padding-left:.8cm;">2.3 Violência juvenil e violência de gênero</p>
+  <p style="padding-left:.8cm;">2.4 Saúde infantojuvenil, saneamento e obesidade</p>
+  <p style="padding-left:.8cm;">2.5 Educação: o elo mais frágil do desenvolvimento local</p>
+  <p style="padding-left:.8cm;">2.6 Fundamentação científica</p>
+  <p>3 OBJETIVOS</p>
+  <p style="padding-left:.8cm;">3.1 Objetivo geral</p>
+  <p style="padding-left:.8cm;">3.2 Objetivos específicos</p>
+  <p>4 PÚBLICO-ALVO E CRITÉRIOS DE SELEÇÃO</p>
+  <p>5 METODOLOGIA</p>
+  <p style="padding-left:.8cm;">5.1 Modelo de financiamento por pessoa física</p>
+  <p style="padding-left:.8cm;">5.2 Compromisso de desenvolvimento e contrapartidas do atleta</p>
+  <p style="padding-left:.8cm;">5.3 Parceria de saúde com a rede municipal</p>
+  <p>6 FINANCIAMENTO POR PESSOA JURÍDICA E CONTRAPARTIDAS</p>
+  <p style="padding-left:.8cm;">6.1 Modalidades de apoio empresarial</p>
+  <p style="padding-left:.8cm;">6.2 Incentivo fiscal: Lei de Incentivo ao Esporte</p>
+  <p>7 REGISTRO, GESTÃO DOS RECURSOS E TRANSPARÊNCIA</p>
+  <p>8 RESULTADOS ESPERADOS E INDICADORES</p>
+  <p>9 CRONOGRAMA DE EXECUÇÃO</p>
+  <p>10 MONITORAMENTO E AVALIAÇÃO</p>
+  <p>11 FASES DE IMPLANTAÇÃO E SUSTENTABILIDADE</p>
+  <p>12 CONSIDERAÇÕES FINAIS</p>
+  <p>REFERÊNCIAS</p>
+</section>
+
+<!-- ============ 1 INTRODUÇÃO ============ -->
+<section class="page">
+  <h1 class="sec">1 INTRODUÇÃO</h1>
+  <p>
+    O Projeto Raízes de Taquarana nasce da convicção de que o esporte, quando praticado com
+    regularidade, disciplina e acompanhamento adequado, é um dos instrumentos mais eficazes de
+    transformação social disponíveis para comunidades em situação de vulnerabilidade. A
+    iniciativa é promovida pela academia LACUS Brazilian Jiu-Jitsu em sua atuação no município
+    de Taquarana, no Agreste alagoano.
+  </p>
+  <p>
+    O nome do projeto não é fortuito. Taquarana foi, até a sua emancipação política, em 1962, o
+    povoado de Canabrava dos Pais, formado a partir da fazenda instalada pela família Correia
+    Pais em 1750. A denominação atual, sugerida pelo bispo Dom Rômulo de Farias, é outro nome
+    para a cana-brava — a taquara —, planta nativa, característica e abundante no Agreste
+    (ALAGOAS, 2018; IBGE, 2022). A taquara é uma haste que verga ao vento sem se quebrar e que
+    só resiste à seca e às intempéries porque suas raízes se entrelaçam no subsolo, sustentando
+    umas às outras. Essa imagem sintetiza a aposta do projeto: formar crianças firmes e
+    flexíveis ao mesmo tempo, profundamente enraizadas na família, na escola e na comunidade — e
+    traduz, também, o próprio princípio do Jiu-Jitsu, a arte de ceder para vencer.
+  </p>
+  <p>
+    O modelo é simples e acessível: qualquer pessoa pode apadrinhar a formação de um atleta com
+    uma contribuição recorrente de dez reais mensais no cartão de crédito. O conjunto das
+    contribuições forma um fundo que custeia, para cada criança ou adolescente selecionado, a
+    mensalidade dos treinos de Jiu-Jitsu, as inscrições e os ingressos em competições oficiais,
+    a alimentação e toda a preparação física e nutricional.
+  </p>
+  <p>
+    O projeto não se limita, contudo, à dimensão esportiva. Cada atleta assume, junto com sua
+    família, um compromisso de desenvolvimento que abrange a vida escolar, o convívio familiar e
+    a saúde. A permanência no programa está condicionada à matrícula escolar regular, ao
+    rendimento acima da média, ao comportamento exemplar e ao comparecimento às avaliações de
+    saúde realizadas em parceria com a rede pública municipal.
+  </p>
+  <p>
+    Este documento apresenta o contexto territorial que justifica a iniciativa, a fundamentação
+    científica que sustenta o seu desenho metodológico, os objetivos, a metodologia de execução,
+    as modalidades de financiamento por pessoas físicas e jurídicas com as respectivas
+    contrapartidas, os mecanismos de registro e transparência na aplicação dos recursos, o
+    cronograma de execução e o plano de monitoramento e avaliação com indicadores aferidos ao
+    longo de todas as fases do projeto.
+  </p>
+</section>
+
+<!-- ============ 2 JUSTIFICATIVA ============ -->
+<section class="page">
+  <h1 class="sec">2 JUSTIFICATIVA</h1>
+
+  <h2 class="sub">2.1 Contexto territorial: Taquarana, o Agreste e Alagoas</h2>
+  <p>
+    Taquarana é um município do Agreste alagoano, situado a cerca de 159 metros de altitude, em
+    região de clima tropical chuvoso com verão seco, e integra a Região Metropolitana do
+    Agreste. Possui área de 153,833 km² e população de 19.032 habitantes recenseados no Censo
+    Demográfico de 2022, com população estimada de 19.428 habitantes em 2025 (IBGE, 2022). Trata-se
+    de um território predominantemente rural: no Censo de 2010, 61,55% da população vivia na zona
+    rural e apenas 38,45% na zona urbana (ALAGOAS, 2018). A economia local é majoritariamente
+    agropecuária, com destaque para a produção de limão — a maior do município —, milho, fava e
+    abacaxi, e para a pecuária bovina e a produção de leite (IBGE, 2022; ALAGOAS, 2018).
+  </p>
+  <p>
+    O estado de Alagoas figura historicamente entre as unidades da federação com os menores
+    indicadores sociais do país, tendo apresentado, por longo período, o menor Índice de
+    Desenvolvimento Humano entre os estados brasileiros (PNUD; IPEA; FJP, 2013). Esse quadro
+    socioeconômico repercute de forma direta nas condições de vida das famílias do território de
+    abrangência do projeto.
+  </p>
+
+  <h2 class="sub">2.2 Vulnerabilidade social, pobreza e desenvolvimento humano</h2>
+  <p>
+    O Índice de Desenvolvimento Humano Municipal (IDHM) de Taquarana era de 0,541 em 2010,
+    situado na faixa considerada baixa pela metodologia do Atlas do Desenvolvimento Humano no
+    Brasil. Ainda que represente avanço expressivo em relação a 1991 (0,279) e a 2000 (0,375), o
+    índice permanece distante do patamar de desenvolvimento elevado. A decomposição do indicador
+    é reveladora: enquanto a dimensão longevidade alcançava 0,710, a dimensão educação registrava
+    apenas 0,421, configurando-se como o componente mais frágil do desenvolvimento humano local
+    (PNUD; IPEA; FJP, 2013; ALAGOAS, 2018).
+  </p>
+  <p>
+    A dimensão da pobreza no município é igualmente expressiva. Em 2016, havia 11.592 pessoas e
+    3.547 famílias inscritas no Cadastro Único para Programas Sociais do Governo Federal — o que
+    corresponde a aproximadamente seis em cada dez habitantes de Taquarana cadastrados como
+    população de baixa renda. No mesmo período, 2.431 famílias eram beneficiárias do Programa
+    Bolsa Família, com repasse anual da ordem de 4,5 milhões de reais (ALAGOAS, 2018). O município
+    conta com um único Centro de Referência de Assistência Social (CRAS) e um único Centro de
+    Atenção Psicossocial (CAPS) para toda a sua população.
+  </p>
+
+  <h2 class="sub">2.3 Violência juvenil e violência de gênero</h2>
+  <p>
+    Alagoas figura sistematicamente entre os estados mais violentos do país no Atlas da
+    Violência, publicação do Instituto de Pesquisa Econômica Aplicada em parceria com o Fórum
+    Brasileiro de Segurança Pública. Em sua edição mais recente, o estado mantém-se entre as
+    unidades da federação com as maiores taxas de homicídio, e os dados nacionais evidenciam que
+    a juventude é a principal vítima dessa letalidade: entre 2014 e 2024, mais de 301 mil jovens
+    de 15 a 29 anos foram assassinados no Brasil; somente em 2024, foram 19.801 mortes nessa
+    faixa etária, com taxa de 42,2 homicídios por 100 mil habitantes, que se eleva a 78,0 por 100
+    mil entre os homens jovens (IPEA; FBSP, 2026). Em Alagoas, o risco de um cidadão negro ser
+    vítima de homicídio chega a ser cerca de 23 vezes maior que o de um cidadão não negro,
+    desigualdade muito superior à média nacional (IPEA; FBSP, 2026).
+  </p>
+  <p>
+    A literatura especializada aponta de forma consistente que a evasão escolar, a ausência de
+    oportunidades, a exclusão social e a falta de perspectivas figuram entre os principais
+    fatores que aproximam jovens vulneráveis dos circuitos da violência, seja na condição de
+    vítimas, seja na de autores. A dimensão da violência de gênero também integra a justificativa
+    do projeto. O Brasil registrou em 2025 o maior número de feminicídios desde a tipificação do
+    crime, em 2015, com 1.568 mulheres assassinadas por razões de gênero, sendo que oito em cada
+    dez casos foram cometidos por parceiros ou ex-companheiros (FBSP, 2026). Por se tratar de
+    comportamento aprendido e reproduzido entre gerações, a violência de gênero pode ser prevenida
+    de forma estrutural na infância, por meio da formação de meninos e meninas que aprendem, desde
+    cedo, o respeito, o autocontrole e a resolução não violenta de conflitos. Este é um dos
+    objetivos centrais do Raízes de Taquarana.
+  </p>
+
+  <h2 class="sub">2.4 Saúde infantojuvenil, saneamento e obesidade</h2>
+  <p>
+    Os indicadores de saúde de Taquarana revelam fragilidades importantes. A taxa de mortalidade
+    infantil do município foi de 35,71 óbitos por mil nascidos vivos em 2023 (IBGE, 2022),
+    patamar muito superior à média nacional, situada em torno de treze óbitos por mil. O
+    município não dispõe de hospital geral, contando, para a atenção à saúde, com uma rede de
+    Unidades Básicas de Saúde e postos de saúde e com um Centro de Atenção Psicossocial (ALAGOAS,
+    2018). O deficit de saneamento agrava o quadro: os serviços de esgotamento sanitário são
+    praticamente inexistentes, atendendo a parcela mínima da população, o que aumenta a exposição
+    de crianças a doenças de veiculação hídrica (ALAGOAS, 2018).
+  </p>
+  <p>
+    A esse cenário soma-se o avanço do excesso de peso na infância. Dados do Sistema de
+    Vigilância Alimentar e Nutricional do Ministério da Saúde indicam que 33,9% das crianças
+    brasileiras de 5 a 9 anos acompanhadas na Atenção Primária apresentam excesso de peso, e
+    levantamentos na região Nordeste apontam que cerca de quatro em cada dez crianças avaliadas
+    apresentam sobrepeso ou obesidade (BRASIL, 2025; INSTITUTO DESIDERATA, 2025). A prática
+    esportiva regular e orientada, combinada com acompanhamento nutricional, é reconhecida como a
+    intervenção de melhor custo-efetividade no enfrentamento desse quadro.
+  </p>
+
+  <h2 class="sub">2.5 Educação: o elo mais frágil do desenvolvimento local</h2>
+  <p>
+    A fragilidade da dimensão educacional do IDHM encontra correspondência nos indicadores
+    educacionais correntes. Embora a taxa de escolarização da população de 6 a 14 anos seja
+    elevada, de 98,96% em 2022 (IBGE, 2022), a qualidade e a permanência continuam sendo o
+    desafio central. O Índice de Desenvolvimento da Educação Básica (IDEB) da rede pública nos
+    anos iniciais do ensino fundamental evoluiu de 4,4, em 2013, para 5,6, em 2017, mas os anos
+    finais do ensino fundamental permaneciam em 4,1 na rede municipal, e o ensino médio registrava
+    taxa de abandono de 10,0% em 2017 (ALAGOAS, 2018). O abandono escolar na adolescência é,
+    justamente, o ponto de inflexão a partir do qual jovens vulneráveis se afastam de trajetórias
+    protetivas. Por isso, o projeto condiciona a permanência do atleta ao desempenho e à
+    frequência escolar, usando o Jiu-Jitsu como incentivo concreto para manter o jovem na escola.
+  </p>
+
+  <h2 class="sub">2.6 Fundamentação científica</h2>
+  <p>
+    O desenho do projeto apoia-se em um corpo consolidado de evidências acadêmicas. A meta-análise
+    de Harwood, Lavidor e Rassovsky (2017), publicada no periódico <em>Aggression and Violent
+    Behavior</em>, sintetizou estudos realizados com crianças e jovens e identificou efeito
+    significativo da prática de artes marciais na redução de comportamentos agressivos e
+    externalizantes. Programas escolares baseados em artes marciais demonstraram redução de
+    comportamento violento, de quebra de regras e de impulsividade em jovens em situação de risco.
+  </p>
+  <p>
+    Em revisão sistemática com meta-análise em rede publicada no periódico <em>Trauma, Violence,
+    &amp; Abuse</em>, Wang et al. (2026) compararam diferentes modalidades e identificaram que
+    práticas marciais com forte componente pedagógico e disciplinar reduzem significativamente a
+    agressividade. Os autores verificaram, ainda, que a frequência superior a três sessões
+    semanais e a duração de sessões acima de sessenta minutos constituem preditores independentes
+    de eficácia. A grade de treinos do Raízes de Taquarana foi desenhada em conformidade com esses
+    parâmetros.
+  </p>
+  <p>
+    No campo da proteção social, o relatório <em>Esporte que Protege contra Violências</em>, do
+    Fundo das Nações Unidas para a Infância, e os estudos do Escritório das Nações Unidas sobre
+    Drogas e Crime documentam que programas esportivos estruturados atuam como fator de proteção,
+    ao ocupar o tempo do jovem com atividade supervisionada, criar vínculos comunitários
+    positivos, oferecer adultos de referência e reduzir a exposição a comportamentos de risco, ao
+    uso de drogas e à evasão escolar (UNICEF, 2023; UNODC, 2016). Revisões brasileiras, como a
+    publicada na revista <em>Conexões</em>, da Universidade Estadual de Campinas, confirmam ganhos
+    em autocontrole, respeito a regras, autoestima e competências socioemocionais de crianças
+    praticantes de artes marciais e esportes de combate (REPPOLD FILHO et al., 2022).
+  </p>
+  <p>
+    Por fim, a literatura do campo conhecido como esporte para o desenvolvimento indica que a
+    prática esportiva estruturada favorece o engajamento e o rendimento escolar, ao desenvolver
+    disciplina, persistência, funções executivas e senso de pertencimento, fatores com impacto
+    direto na aprendizagem formal. O condicionamento da permanência no projeto ao desempenho
+    escolar potencializa esse mecanismo.
+  </p>
+</section>
+
+<!-- ============ 3 OBJETIVOS ============ -->
+<section class="page">
+  <h1 class="sec">3 OBJETIVOS</h1>
+  <h2 class="sub">3.1 Objetivo geral</h2>
+  <p>
+    Promover o desenvolvimento integral, nas dimensões física, mental, educacional e social, de
+    crianças e adolescentes em situação de vulnerabilidade no município de Taquarana, utilizando
+    o Jiu-Jitsu como eixo estruturante, de modo a formar adultos com conduta ética, saúde e
+    vínculos positivos com a família e a comunidade.
+  </p>
+  <h2 class="sub">3.2 Objetivos específicos</h2>
+  <ol class="alpha" type="a">
+    <li>garantir prática esportiva regular, com no mínimo três treinos semanais, a crianças e adolescentes que não teriam acesso a ela, na zona urbana e na zona rural do município;</li>
+    <li>manter a totalidade dos atletas com matrícula escolar regular e rendimento acima da média, combatendo de forma ativa o abandono escolar na adolescência;</li>
+    <li>prevenir e combater o sobrepeso e a obesidade infantil, com acompanhamento médico e nutricional periódico;</li>
+    <li>reduzir comportamentos agressivos e desenvolver autocontrole, disciplina e respeito;</li>
+    <li>atuar preventivamente contra a violência juvenil, a violência doméstica e o feminicídio, formando meninos e meninas com referências de respeito e de não violência;</li>
+    <li>criar trajetórias esportivas reais, com participação em competições oficiais;</li>
+    <li>fortalecer o vínculo entre família, escola e comunidade no território.</li>
+  </ol>
+</section>
+
+<!-- ============ 4 PÚBLICO-ALVO ============ -->
+<section class="page">
+  <h1 class="sec">4 PÚBLICO-ALVO E CRITÉRIOS DE SELEÇÃO</h1>
+  <p>
+    O projeto destina-se a crianças e adolescentes residentes em Taquarana, na sede e nos
+    povoados rurais do município, pertencentes a famílias em situação de vulnerabilidade
+    socioeconômica. Considerando o caráter predominantemente rural do território, a seleção dará
+    atenção especial à inclusão de atletas da zona rural, historicamente mais distantes do acesso
+    a atividades esportivas estruturadas. A seleção observa os seguintes critérios:
+  </p>
+  <ol class="alpha" type="a">
+    <li>residência no território de abrangência do projeto;</li>
+    <li>situação de vulnerabilidade socioeconômica da família, aferida por renda, inscrição no Cadastro Único para Programas Sociais ou avaliação social;</li>
+    <li>matrícula escolar regular ativa, condição de entrada e de permanência no programa;</li>
+    <li>assinatura do termo de compromisso pelos responsáveis legais.</li>
+  </ol>
+</section>
+
+<!-- ============ 5 METODOLOGIA ============ -->
+<section class="page">
+  <h1 class="sec">5 METODOLOGIA</h1>
+
+  <h2 class="sub">5.1 Modelo de financiamento por pessoa física</h2>
+  <p>
+    Pessoas físicas aderem ao projeto com contribuição de dez reais mensais, cobrada de forma
+    recorrente no cartão de crédito. A recorrência garante previsibilidade de receita e o valor
+    reduzido democratiza o apadrinhamento, permitindo que um conjunto de padrinhos e madrinhas
+    sustente cada atleta. O Quadro 1 apresenta os itens custeados.
+  </p>
+  <table class="q">
+    <caption>Quadro 1 — Itens custeados por atleta apadrinhado</caption>
+    <thead><tr><th style="width:34%;">Item</th><th>Descrição</th></tr></thead>
+    <tbody>
+      <tr><td>Mensalidade dos treinos</td><td>Acesso integral à grade de treinos infantojuvenil da LACUS, com no mínimo três sessões semanais</td></tr>
+      <tr><td>Competições</td><td>Inscrições, ingressos e logística de participação em campeonatos oficiais</td></tr>
+      <tr><td>Alimentação</td><td>Suporte alimentar vinculado ao plano nutricional do atleta</td></tr>
+      <tr><td>Preparação física</td><td>Acompanhamento de preparação física adequada à idade</td></tr>
+      <tr><td>Preparação nutricional</td><td>Avaliação e plano nutricional periódicos</td></tr>
+      <tr><td>Quimono e equipamentos</td><td>Uniforme e materiais de treino conforme a necessidade</td></tr>
+    </tbody>
+  </table>
+  <p class="fonte">Fonte: elaboração própria (2026).</p>
+
+  <h2 class="sub">5.2 Compromisso de desenvolvimento e contrapartidas do atleta</h2>
+  <p>
+    O projeto não tem caráter assistencialista. Trata-se de um pacto de responsabilidade firmado
+    entre o atleta, a família, a escola e a academia. Para permanecer no programa, o atleta deve
+    cumprir os requisitos descritos no Quadro 2.
+  </p>
+  <table class="q">
+    <caption>Quadro 2 — Requisitos de permanência e instrumentos de verificação</caption>
+    <thead><tr><th>Dimensão</th><th>Requisito</th><th>Verificação</th><th style="width:18%;">Periodicidade</th></tr></thead>
+    <tbody>
+      <tr><td>Escola</td><td>Matrícula regular, notas acima da média e frequência</td><td>Relatório escolar oficial</td><td>Semestral</td></tr>
+      <tr><td>Família</td><td>Comportamento exemplar em casa e respeito aos responsáveis</td><td>Relatório dos pais ou responsáveis</td><td>Mensal</td></tr>
+      <tr><td>Treinos</td><td>Assiduidade, disciplina e respeito a professores e colegas</td><td>Avaliação da equipe técnica da LACUS</td><td>Contínua</td></tr>
+      <tr><td>Saúde</td><td>Comparecimento às avaliações médicas e nutricionais</td><td>Rede municipal de saúde</td><td>Conforme protocolo</td></tr>
+    </tbody>
+  </table>
+  <p class="fonte">Fonte: elaboração própria (2026).</p>
+  <p>
+    O atleta que não atender aos requisitos relatados pela escola e pela família ficará
+    temporariamente suspenso das atividades de treino na LACUS, com plano de retorno acordado
+    entre a família, a escola e a equipe do projeto. A suspensão não constitui punição definitiva,
+    mas mecanismo educativo que ensina, desde cedo, que privilégios acompanham responsabilidades.
+    O acompanhamento social da criança é mantido durante o período de suspensão.
+  </p>
+
+  <h2 class="sub">5.3 Parceria de saúde com a rede municipal</h2>
+  <p>
+    O projeto mantém parceria com a Secretaria Municipal de Saúde de Taquarana e sua rede de
+    Unidades Básicas de Saúde e postos de saúde, assegurando a todos os atletas:
+  </p>
+  <ol class="alpha" type="a">
+    <li>avaliação médica periódica e atestado de aptidão para a prática esportiva;</li>
+    <li>exames laboratoriais e bioquímicos de rotina, tais como hemograma, glicemia e perfil lipídico, além de outros exames clinicamente indicados;</li>
+    <li>monitoramento do crescimento, do índice de massa corporal e do estado nutricional, com enfrentamento ativo do sobrepeso e da obesidade infantil;</li>
+    <li>encaminhamentos especializados quando necessário, inclusive ao Centro de Atenção Psicossocial do município.</li>
+  </ol>
+</section>
+
+<!-- ============ 6 FINANCIAMENTO PJ ============ -->
+<section class="page">
+  <h1 class="sec">6 FINANCIAMENTO POR PESSOA JURÍDICA E CONTRAPARTIDAS</h1>
+  <p>
+    Além do apadrinhamento por pessoas físicas, o projeto prevê modalidades de financiamento por
+    pessoas jurídicas, com contrapartidas institucionais proporcionais ao aporte realizado.
+  </p>
+  <h2 class="sub">6.1 Modalidades de apoio empresarial</h2>
+  <p>
+    As empresas poderão apoiar o projeto por meio de cotas de patrocínio, descritas no Quadro 3,
+    cujos valores e quantidades de atletas vinculados serão formalizados em contrato ou termo de
+    patrocínio específico.
+  </p>
+  <table class="q">
+    <caption>Quadro 3 — Cotas de patrocínio para pessoa jurídica e contrapartidas</caption>
+    <thead><tr><th style="width:22%;">Cota</th><th style="width:34%;">Descrição do apoio</th><th>Contrapartidas oferecidas</th></tr></thead>
+    <tbody>
+      <tr><td>Empresa Madrinha</td><td>Custeio integral de um ou mais atletas por no mínimo doze meses</td><td>Logomarca no quimono dos atletas apoiados, no material de divulgação e na página do projeto; certificado de empresa apoiadora; menção nas redes sociais</td></tr>
+      <tr><td>Patrocinadora de Competições</td><td>Custeio de inscrições, ingressos e logística de uma temporada de competições</td><td>Logomarca nos uniformes de competição e nas publicações relativas aos campeonatos; relatório fotográfico dos eventos</td></tr>
+      <tr><td>Apoiadora Institucional</td><td>Contribuição mensal recorrente de valor livre, superior à cota de pessoa física</td><td>Selo digital de empresa apoiadora para uso institucional; menção no relatório anual de resultados</td></tr>
+    </tbody>
+  </table>
+  <p class="fonte">Fonte: elaboração própria (2026).</p>
+  <p>
+    Todas as contrapartidas de visibilidade observarão o Estatuto da Criança e do Adolescente e a
+    Lei Geral de Proteção de Dados Pessoais, sendo vedado qualquer uso de imagem de criança ou
+    adolescente sem autorização expressa dos responsáveis legais.
+  </p>
+  <h2 class="sub">6.2 Incentivo fiscal: Lei de Incentivo ao Esporte</h2>
+  <p>
+    A Lei nº 11.438, de 29 de dezembro de 2006, conhecida como Lei de Incentivo ao Esporte,
+    tornada política pública permanente pela Lei Complementar nº 222, de 2025, permite que pessoas
+    jurídicas tributadas pelo regime de Lucro Real deduzam do Imposto de Renda devido os valores
+    despendidos a título de doação ou patrocínio a projetos desportivos aprovados pelo Ministério
+    do Esporte (BRASIL, 2006; BRASIL, 2025).
+  </p>
+  <p>
+    O limite geral de dedução para pessoas jurídicas é de 2% do imposto devido, percentual que
+    passará a 3% a partir do ano-calendário de 2028. Para projetos voltados à inclusão social por
+    meio do esporte, destinados a comunidades em situação de vulnerabilidade social, hipótese na
+    qual o Raízes de Taquarana se enquadra, o limite de dedução pode alcançar 4% (BRASIL, 2025).
+  </p>
+  <p>
+    Para viabilizar essa modalidade de captação, o projeto prevê, em sua terceira fase de
+    implantação, a constituição de pessoa jurídica sem fins lucrativos e o cadastramento do
+    proponente e do projeto junto ao Ministério do Esporte, requisitos legais para a captação de
+    recursos incentivados. Enquanto essa habilitação não for concluída, os aportes empresariais
+    ocorrerão na modalidade de patrocínio direto, com as contrapartidas descritas na subseção 6.1,
+    sem benefício fiscal. Cabe registrar que a legislação veda a destinação de recursos
+    incentivados a projetos que beneficiem, direta ou indiretamente, pessoa física ou jurídica
+    vinculada ao doador ou ao patrocinador, vedação que será observada na celebração de todos os
+    instrumentos de apoio.
+  </p>
+</section>
+
+<!-- ============ 7 TRANSPARÊNCIA ============ -->
+<section class="page">
+  <h1 class="sec">7 REGISTRO, GESTÃO DOS RECURSOS E TRANSPARÊNCIA</h1>
+  <p>
+    O projeto será formalmente registrado e adotará mecanismos permanentes de prestação de
+    contas, de modo que todo apoiador, pessoa física ou jurídica, saiba exatamente para onde está
+    indo cada real recebido e onde ele será investido. São compromissos do projeto:
+  </p>
+  <ol class="alpha" type="a">
+    <li>registro formal do projeto, com regulamento próprio, termo de compromisso dos atletas e instrumentos contratuais de patrocínio, e, na terceira fase, constituição de pessoa jurídica sem fins lucrativos com inscrição no Cadastro Nacional da Pessoa Jurídica;</li>
+    <li>manutenção de conta bancária exclusiva para os recursos do projeto, segregada das finanças da academia;</li>
+    <li>processamento das contribuições por plataforma de pagamento recorrente, com emissão de recibo para cada contribuinte;</li>
+    <li>registro contábil de todas as entradas e saídas, com classificação por categoria de despesa, conforme os itens do Quadro 1;</li>
+    <li>publicação de demonstrativo semestral de receitas e despesas, encaminhado a todos os padrinhos, madrinhas e empresas apoiadoras e disponibilizado na página do projeto;</li>
+    <li>publicação de relatório anual de resultados, contendo a aplicação integral dos recursos, os indicadores de desempenho descritos na seção 8 e a evolução dos atletas, com preservação da imagem e dos dados pessoais das crianças e dos adolescentes, conforme o Estatuto da Criança e do Adolescente e a Lei Geral de Proteção de Dados Pessoais;</li>
+    <li>disponibilidade dos documentos comprobatórios de despesa para consulta por qualquer apoiador, mediante solicitação.</li>
+  </ol>
+</section>
+
+<!-- ============ 8 INDICADORES ============ -->
+<section class="page">
+  <h1 class="sec">8 RESULTADOS ESPERADOS E INDICADORES</h1>
+  <p>O monitoramento do projeto será realizado por meio dos indicadores apresentados no Quadro 4.</p>
+  <table class="q">
+    <caption>Quadro 4 — Indicadores de monitoramento e metas</caption>
+    <thead><tr><th style="width:34%;">Indicador</th><th style="width:30%;">Meta</th><th>Fonte de verificação</th></tr></thead>
+    <tbody>
+      <tr><td>Frequência escolar dos atletas</td><td>Igual ou superior a 95%</td><td>Relatórios escolares semestrais</td></tr>
+      <tr><td>Rendimento escolar</td><td>Notas acima da média da turma</td><td>Boletins e relatórios escolares</td></tr>
+      <tr><td>Assiduidade nos treinos</td><td>Igual ou superior a 85%</td><td>Registro de presença da equipe da LACUS</td></tr>
+      <tr><td>Índice de massa corporal na faixa saudável</td><td>Evolução positiva em todos os casos fora da faixa</td><td>Avaliações da rede municipal e da nutricionista</td></tr>
+      <tr><td>Exames de saúde em dia</td><td>Totalidade dos atletas</td><td>Protocolo da rede municipal de saúde</td></tr>
+      <tr><td>Ocorrências disciplinares na escola e em casa</td><td>Redução contínua</td><td>Relatórios mensais e semestrais</td></tr>
+      <tr><td>Participação em competições</td><td>No mínimo duas por ano por atleta apto</td><td>Registros de inscrição</td></tr>
+      <tr><td>Permanência no programa</td><td>Igual ou superior a 80% ao ano</td><td>Registros administrativos</td></tr>
+    </tbody>
+  </table>
+  <p class="fonte">Fonte: elaboração própria (2026).</p>
+</section>
+
+<!-- ============ 9 CRONOGRAMA ============ -->
+<section class="page">
+  <h1 class="sec">9 CRONOGRAMA DE EXECUÇÃO</h1>
+  <p>
+    A execução do projeto está organizada em um horizonte inicial de doze meses, sem prejuízo de
+    sua continuidade nos exercícios seguintes. O Quadro 5 distribui as atividades ao longo de
+    quatro trimestres, articulando a mobilização inicial, a formação da primeira turma, a rotina
+    de treinos e acompanhamento e as avaliações periódicas.
+  </p>
+  <table class="q">
+    <caption>Quadro 5 — Cronograma de execução (meses 1 a 12)</caption>
+    <thead><tr><th style="width:46%;">Atividade</th><th>T1<br><span class="small">M1–M3</span></th><th>T2<br><span class="small">M4–M6</span></th><th>T3<br><span class="small">M7–M9</span></th><th>T4<br><span class="small">M10–M12</span></th></tr></thead>
+    <tbody>
+      <tr><td>Registro do projeto, regulamento e abertura de conta exclusiva</td><td style="text-align:center;">●</td><td></td><td></td><td></td></tr>
+      <tr><td>Articulação com escolas, CRAS e Secretaria Municipal de Saúde</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td></td><td></td></tr>
+      <tr><td>Divulgação e captação de padrinhos, madrinhas e patrocinadores</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td></tr>
+      <tr><td>Seleção dos atletas e assinatura dos termos de compromisso</td><td style="text-align:center;">●</td><td></td><td></td><td></td></tr>
+      <tr><td>Avaliação inicial (linha de base): saúde, IMC e dados escolares</td><td style="text-align:center;">●</td><td></td><td></td><td></td></tr>
+      <tr><td>Início e rotina dos treinos de Jiu-Jitsu (mín. 3 sessões/semana)</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td></tr>
+      <tr><td>Acompanhamento nutricional e de preparação física</td><td></td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td></tr>
+      <tr><td>Relatórios familiares mensais</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td></tr>
+      <tr><td>Participação em competições oficiais</td><td></td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td></tr>
+      <tr><td>Relatório escolar e avaliação de processo (1º semestre)</td><td></td><td style="text-align:center;">●</td><td></td><td></td></tr>
+      <tr><td>Demonstrativo semestral de receitas e despesas</td><td></td><td style="text-align:center;">●</td><td></td><td style="text-align:center;">●</td></tr>
+      <tr><td>Avaliação de resultados e relatório anual</td><td></td><td></td><td></td><td style="text-align:center;">●</td></tr>
+    </tbody>
+  </table>
+  <p class="fonte">Fonte: elaboração própria (2026).</p>
+</section>
+
+<!-- ============ 10 MONITORAMENTO E AVALIAÇÃO ============ -->
+<section class="page">
+  <h1 class="sec">10 MONITORAMENTO E AVALIAÇÃO</h1>
+  <p>
+    A avaliação do projeto não se concentra em um único momento, mas acompanha todo o ciclo de
+    execução. Adota-se um modelo em quatro níveis — diagnóstico, processo, resultado e impacto —,
+    descritos no Quadro 6, que combina a linha de base levantada na entrada de cada atleta com o
+    acompanhamento contínuo e com a aferição periódica dos indicadores da seção 8.
+  </p>
+  <table class="q">
+    <caption>Quadro 6 — Modelo de avaliação por nível</caption>
+    <thead><tr><th style="width:20%;">Nível</th><th style="width:42%;">O que avalia</th><th>Instrumentos e periodicidade</th></tr></thead>
+    <tbody>
+      <tr><td>Diagnóstico (linha de base)</td><td>Situação de saúde, IMC, estado nutricional, rendimento e frequência escolar de cada atleta na entrada</td><td>Avaliação médica e nutricional; boletim escolar; ficha social — no ingresso</td></tr>
+      <tr><td>Processo</td><td>Execução das atividades: assiduidade nos treinos, cumprimento dos compromissos, qualidade do acompanhamento</td><td>Registro de presença; relatórios familiares mensais; avaliação da equipe técnica — contínua</td></tr>
+      <tr><td>Resultado</td><td>Evolução escolar, de saúde, de comportamento e esportiva em relação à linha de base</td><td>Relatórios escolares semestrais; reavaliações de saúde; registros de competição — semestral</td></tr>
+      <tr><td>Impacto</td><td>Permanência no programa, manutenção do vínculo escolar e mudanças sustentadas na trajetória do atleta</td><td>Relatório anual de resultados; comparação interanual dos indicadores — anual</td></tr>
+    </tbody>
+  </table>
+  <p class="fonte">Fonte: elaboração própria (2026).</p>
+  <p>
+    Os resultados de cada nível de avaliação realimentam a gestão do projeto, orientando ajustes
+    na metodologia, no acompanhamento individual e na alocação de recursos, e compõem os
+    relatórios de transparência encaminhados aos apoiadores.
+  </p>
+</section>
+
+<!-- ============ 11 FASES ============ -->
+<section class="page">
+  <h1 class="sec">11 FASES DE IMPLANTAÇÃO E SUSTENTABILIDADE</h1>
+  <p>
+    O modelo de microcontribuição recorrente foi escolhido por sua resiliência: a perda de um
+    contribuinte individual tem impacto mínimo sobre a receita total, e a base de apoiadores
+    tende a crescer organicamente com a divulgação dos resultados. A implantação está organizada
+    em três fases:
+  </p>
+  <ol class="alpha" type="a">
+    <li>primeira fase, denominada piloto, com a formação da primeira turma de atletas apadrinhados e a consolidação dos fluxos de relatório com as escolas e com a rede municipal de saúde;</li>
+    <li>segunda fase, com a ampliação do número de vagas conforme o crescimento da base de padrinhos e madrinhas e a captação de patrocínios empresariais diretos, nos termos da seção 6, com atenção à inclusão de atletas da zona rural;</li>
+    <li>terceira fase, com a constituição de pessoa jurídica sem fins lucrativos e a habilitação do projeto junto ao Ministério do Esporte, permitindo o acesso a recursos da Lei de Incentivo ao Esporte, a editais públicos e a termos de fomento.</li>
+  </ol>
+</section>
+
+<!-- ============ 12 CONSIDERAÇÕES FINAIS ============ -->
+<section class="page">
+  <h1 class="sec">12 CONSIDERAÇÕES FINAIS</h1>
+  <p>
+    O Raízes de Taquarana propõe uma resposta concreta, mensurável e cientificamente fundamentada
+    aos desafios do território em que se insere. Com uma contribuição mensal acessível a
+    praticamente qualquer pessoa, o projeto articula esporte, escola, família e saúde pública em
+    torno de um único objetivo: formar crianças saudáveis, estudantes dedicados e, no futuro,
+    adultos com conduta ética, capazes de respeitar a família, os colegas e a sociedade, rompendo
+    os ciclos de violência, evasão escolar e adoecimento que marcam a realidade de Alagoas.
+  </p>
+  <p>
+    Como a taquara que dá nome à cidade, o projeto aposta em raízes fortes e entrelaçadas — a
+    família, a escola, a comunidade e a rede de apoiadores — para que cada criança possa vergar
+    diante das dificuldades sem se quebrar e crescer firme. A combinação entre contrapartidas
+    exigidas dos atletas, acompanhamento intersetorial e transparência integral na aplicação dos
+    recursos confere ao projeto a seriedade necessária para conquistar e manter a confiança de
+    seus apoiadores, sejam eles pessoas físicas ou jurídicas.
+  </p>
+</section>
+
+<!-- ============ REFERÊNCIAS ============ -->
+<section class="page">
+  <h1 class="sec center" style="text-align:center; margin-bottom:.6cm;">REFERÊNCIAS</h1>
+
+  <p class="ref ref-hang">ALAGOAS. Secretaria de Estado do Planejamento, Gestão e Patrimônio (Seplag). <strong>Perfil Municipal: Taquarana</strong>. Maceió: Seplag/Sinc, v. 4, n. 4, 2018. Disponível em: https://dados.al.gov.br. Acesso em: 24 jun. 2026.</p>
+
+  <p class="ref ref-hang">BRASIL. Lei nº 11.438, de 29 de dezembro de 2006. Dispõe sobre incentivos e benefícios para fomentar as atividades de caráter desportivo. <strong>Diário Oficial da União</strong>: Brasília, DF, 29 dez. 2006.</p>
+
+  <p class="ref ref-hang">BRASIL. Lei Complementar nº 222, de 2025. Torna permanente a Lei de Incentivo ao Esporte e amplia os limites de dedução. <strong>Diário Oficial da União</strong>: Brasília, DF, 2025.</p>
+
+  <p class="ref ref-hang">BRASIL. Ministério da Saúde. <strong>Sistema de Vigilância Alimentar e Nutricional (SISVAN)</strong>: relatórios públicos de estado nutricional. Brasília, DF: Ministério da Saúde, 2025.</p>
+
+  <p class="ref ref-hang">FÓRUM BRASILEIRO DE SEGURANÇA PÚBLICA (FBSP). <strong>Retrato dos feminicídios no Brasil</strong>: nota técnica. São Paulo: FBSP, 2026.</p>
+
+  <p class="ref ref-hang">HARWOOD, A.; LAVIDOR, M.; RASSOVSKY, Y. Reducing aggression with martial arts: a meta-analysis of child and youth studies. <strong>Aggression and Violent Behavior</strong>, v. 34, p. 96-101, 2017.</p>
+
+  <p class="ref ref-hang">INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). <strong>Cidades e Estados: Taquarana, AL</strong> — Censo Demográfico 2022 e indicadores municipais. Rio de Janeiro: IBGE, 2022. Disponível em: https://www.ibge.gov.br/cidades-e-estados/al/taquarana.html. Acesso em: 24 jun. 2026.</p>
+
+  <p class="ref ref-hang">INSTITUTO DESIDERATA. <strong>Panorama da obesidade em crianças e adolescentes</strong>. Rio de Janeiro: Instituto Desiderata, 2025.</p>
+
+  <p class="ref ref-hang">INSTITUTO DE PESQUISA ECONÔMICA APLICADA (IPEA); FÓRUM BRASILEIRO DE SEGURANÇA PÚBLICA (FBSP). <strong>Atlas da violência 2026</strong>. Brasília, DF: IPEA; FBSP, 2026.</p>
+
+  <p class="ref ref-hang">PROGRAMA DAS NAÇÕES UNIDAS PARA O DESENVOLVIMENTO (PNUD); INSTITUTO DE PESQUISA ECONÔMICA APLICADA (IPEA); FUNDAÇÃO JOÃO PINHEIRO (FJP). <strong>Atlas do desenvolvimento humano no Brasil</strong>. Brasília, DF: PNUD, 2013.</p>
+
+  <p class="ref ref-hang">REPPOLD FILHO, A. R. et al. Artes marciais e esportes de combate como ferramentas promotoras de comportamentos socialmente competentes de crianças: revisão integrativa. <strong>Conexões</strong>, Campinas, SP, 2022.</p>
+
+  <p class="ref ref-hang">UNICEF. <strong>Esporte que protege contra violências</strong>. Brasília, DF: UNICEF Brasil, 2023.</p>
+
+  <p class="ref ref-hang">UNODC. <strong>O poder do esporte na prevenção da delinquência juvenil e do uso de drogas</strong>. Brasília, DF: UNODC, 2016.</p>
+
+  <p class="ref ref-hang">WANG, X. et al. Effects of martial arts exercise on aggressive behaviors in young people: a systematic review and network meta-analysis. <strong>Trauma, Violence, &amp; Abuse</strong>, 2026.</p>
+</section>
+
+</body>
+</html>
