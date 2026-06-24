@@ -104,6 +104,38 @@
     });
   }
 
+  /* ---- Scroll-growing taquara spine ---- */
+  var spine = document.querySelector(".spine");
+  if (spine) {
+    var ticking = false;
+    function updateSpine() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      spine.style.setProperty("--p", p.toFixed(4));
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(updateSpine); }
+    }, { passive: true });
+    updateSpine();
+  }
+
+  /* ---- Cursor glow (fine pointer only) ---- */
+  var glow = document.querySelector(".cursor-glow");
+  if (glow && !reduce && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    var gx = 0, gy = 0, raf = false;
+    function moveGlow() {
+      glow.style.transform = "translate3d(" + gx + "px," + gy + "px,0) translate(-50%,-50%)";
+      raf = false;
+    }
+    window.addEventListener("mousemove", function (e) {
+      gx = e.clientX; gy = e.clientY;
+      glow.classList.add("on");
+      if (!raf) { raf = true; requestAnimationFrame(moveGlow); }
+    }, { passive: true });
+    document.addEventListener("mouseleave", function () { glow.classList.remove("on"); });
+  }
+
   /* ---- Active section in nav ---- */
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
   var sections = links
