@@ -3,6 +3,11 @@ pesquisa/
 adote_*.txt
 *.tmp
 
+# Rascunho de orçamento + honorários (uso interno, não publicar)
+*rascunho-orcamento.doc
+*rascunho-orcamento.docx
+~$*.docx
+
 # Ferramentas locais de preview
 .claude/
 
